@@ -67,92 +67,33 @@
 
   <main id="top" class="container">
     <!-- قسم البطل (Hero): مقدمة تعريفية سريعة -->
-    <section class="hero">
-      <div class="hero__left">
-        <!-- وصف مختصر للمطور -->
-        <p class="kicker reveal">Mobile & Backend Developer</p>
-        <!-- العنوان الرئيسي مع تأثير الكتابة -->
-        <h1 class="hero__title reveal">
-          I build <span class="accent">fast</span>, <span class="accent">clean</span> apps<br />
-          with <span class="typing" id="typing-text"></span>
-        </h1>
+<section class="profile section">
+  <div class="card" style="max-width:700px; margin:auto; text-align:center;">
+    <div class="avatar" style="margin:0 auto 16px;">
+      <img id="avatarImg" alt="Suliman" />
+    </div>
 
-        <!-- وصف تفصيلي للمهارات والتقنيات -->
-        <p class="lead reveal">
-        <ul class="lead-list">
-          <li>Flutter State Management : GetX / Provider / Bloc </li>
-          <li>Flutter Architecture : MVVM / MVC </li>
-          <li>Real-time systems: WebSocket</li>
-          <li>Backends: Laravel / NestJS</li>
-          <li>Clean architecture, reliable UX, and production-ready delivery</li>
-        </ul>
-        </p>
+    <h1 style="margin-bottom:8px;">Suliman Omaira</h1>
+    <p class="muted">Flutter Developer • Backend Integration • Real-time Systems</p>
 
-        <!-- أزرار دعوة لاتخاذ إجراء (مشاريع/تواصل) -->
-        <div class="hero__cta reveal">
-          <a class="btn btn--primary" href="#projects">See Projects</a>
-          <a class="btn btn--ghost" href="#contact">Contact</a>
-        </div>
+    <div class="chips" style="justify-content:center; margin-top:20px;">
+      <span class="chip">Flutter</span>
+      <span class="chip">Block</span>
+      <span class="chip">Provider</span>
+      <span class="chip">GetX</span>
+      <span class="chip">Laravel</span>
+      <span class="chip">NestJS</span>
+      <span class="chip">WebSocket</span>
+      <span class="chip">Google Map</span>
+      <span class="chip">Firebase</span>
+    </div>
 
-        <!-- روابط التواصل الاجتماعي والبريد -->
-        <div class="meta reveal" id="socialLinks"></div>
-
-        <!-- إحصائيات سريعة عن الإنجازات -->
-        <div class="hero__stats reveal">
-          <div class="stat">
-            <div class="stat__num">3+</div>
-            <div class="stat__label">Production apps</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">Real-time</div>
-            <div class="stat__label">Tracking & chat</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">Clean</div>
-            <div class="stat__label">Architecture</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- بطاقة جانبية تعرض المهارات والخبرات بشكل مختصر -->
-      <aside class="hero__card card reveal">
-        <div class="card__top">
-          <div class="avatar" aria-hidden="true">
-            <img id="avatarImg" alt="Suliman" style="cursor:pointer;" />
-          </div>
-          <!-- نافذة منبثقة للصورة -->
-          <div id="imgModal" class="modal" style="display:none;">
-            <div class="modal__content">
-              <span class="modal__close" id="closeModal">&times;</span>
-              <img id="modalImg" src="assets/images/personal/me.jpeg" alt="Profile Large" />
-            </div>
-          </div>
-          <!-- <div class="avatar__glow"></div> -->
-        </div>
-        <div>
-          <p class="card__title">Now shipping</p>
-          <p class="muted small">Maps • Tracking • Chatbots</p>
-        </div>
-        </div>
-
-        <!-- قائمة مختصرة بالمهارات والخدمات المقدمة -->
-        <ul class="list">
-          <li class="list__item">Flutter UI components & state management</li>
-          <li class="list__item">Maps, routes, markers, polyline rendering</li>
-          <li class="list__item">WebSocket live updates </li>
-          <li class="list__item">Backends: Laravel + NestJS for new services</li>
-        </ul>
-
-        <!-- أزرار إضافية -->
-        <div class="card__bottom">
-          <a class="btn btn--ghost btn--sm" href="#skills">Tech stack</a>
-          <a class="btn btn--primary btn--sm" href="#contact">Hire me</a>
-        </div>
-      </aside>
-
-      <!-- تأثير جمالي في الخلفية -->
-      <div class="hero__glow" aria-hidden="true"></div>
-    </section>
+    <div class="hero__cta" style="justify-content:center; margin-top:24px;">
+      <a class="btn btn--primary" href="#projects">Projects</a>
+      <a class="btn btn--ghost" href="#contact">Contact</a>
+    </div>
+  </div>
+</section>
 
     <!-- قسم نبذة عني -->
     <section id="about" class="section">
