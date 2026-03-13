@@ -3,6 +3,8 @@ import { initReveal } from "./reveal.js";
 import { initTyping, initParticles, initFloating, initPulse, initScrollProgress } from "./advanced.js";
 import { siteData } from "./data.js";
 
+console.log('[main.js] loaded');
+
 function initData() {
   // Set avatar image
   const avatarImg = document.getElementById('avatarImg');
@@ -46,21 +48,28 @@ function initData() {
 function initYear() { const year = document.getElementById("year"); if (year) year.textContent = String(new Date().getFullYear()); }
 
 function initMobileMenu() {
+  console.log('[main.js] initMobileMenu');
   const burger = document.getElementById("burger");
   const menu = document.getElementById("mobileMenu");
-  if (!burger || !menu) return;
+  if (!burger || !menu) {
+    console.warn('[main.js] initMobileMenu: missing elements', { burger, menu });
+    return;
+  }
 
   burger.addEventListener("click", () => {
     const isOpen = burger.getAttribute("aria-expanded") === "true";
     burger.setAttribute("aria-expanded", String(!isOpen));
-    menu.hidden = isOpen;
+    menu.classList.toggle('mobileMenu--open', !isOpen);
+    burger.textContent = isOpen ? '☰' : 'X';
+    console.log('[main.js] mobile menu toggle', { isOpen, menuClass: menu.className });
   });
 
   // close when clicking a link
   menu.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => {
       burger.setAttribute("aria-expanded", "false");
-      menu.hidden = true;
+      menu.classList.remove('mobileMenu--open');
+      burger.textContent = '☰';
     });
   });
 }

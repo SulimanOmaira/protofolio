@@ -49,20 +49,20 @@
         <a class="btn btn--primary" href="#projects">View work</a>
       </div>
 
-      <!-- زر القائمة الجانبية للأجهزة الصغيرة -->
-      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <!-- زر القائمة الجانبية للأجهزة الصغيرة -->      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         ☰
       </button>
     </div>
 
     <!-- قائمة التنقل الجانبية للجوال -->
-    <div class="mobileMenu" id="mobileMenu" hidden>
+    <div class="mobileMenu" id="mobileMenu">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
+
   </header>
 
   <main id="top" class="container">
@@ -75,6 +75,7 @@
 
     <h1 style="margin-bottom:8px;">Suliman Omaira</h1>
     <p class="muted">Flutter Developer • Backend Integration • Real-time Systems</p>
+    <p id="typing-text" class="muted" style="min-height:22px; margin-top:12px;"></p>
 
     <div class="chips" style="justify-content:center; margin-top:20px;">
       <span class="chip">Flutter</span>
@@ -344,6 +345,15 @@
     </section>
   </main>
 
+  <!-- منبثقة لتكبير الصورة الشخصية -->
+  <div id="imgModal" class="img-modal">
+    <div class="img-modal__overlay"></div>
+    <div class="img-modal__content">
+      <button id="closeModal" class="img-modal__close" aria-label="Close">×</button>
+      <img id="modalImg" alt="Avatar enlarged" />
+    </div>
+  </div>
+
   <!-- ربط ملف جافاسكريبت الرئيسي للموقع -->
   <script type="module" src="js/main.js"></script>
   <script type="module">
@@ -375,18 +385,35 @@
       var modal = document.getElementById('imgModal');
       var modalImg = document.getElementById('modalImg');
       var closeModal = document.getElementById('closeModal');
-      if (avatarImg && modal && modalImg && closeModal) {
+      var overlay = modal ? modal.querySelector('.img-modal__overlay') : null;
+
+      if (avatarImg && modal && modalImg && closeModal && overlay) {
         avatarImg.style.cursor = 'pointer';
-        avatarImg.addEventListener('click', function () {
-          modal.style.display = 'flex';
+
+        function openModal() {
+          modal.classList.add('is-open');
           modalImg.src = avatarImg.src;
+          document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+
+        avatarImg.addEventListener('click', openModal);
+        closeModal.addEventListener('click', close);
+        overlay.addEventListener('click', close);
+
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) close();
         });
-        closeModal.onclick = function () {
-          modal.style.display = 'none';
-        };
-        modal.onclick = function (e) {
-          if (e.target === modal) modal.style.display = 'none';
-        };
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+            close();
+          }
+        });
       }
     });
   </script>

@@ -6,7 +6,12 @@ export function initTyping() {
   const typingElement = document.getElementById('typing-text');
   if (!typingElement) return;
 
-  const texts = ['Flutter & modern APIs.', 'real-time systems.', 'scalable backends.'];
+  // const texts = ['Flutter & modern APIs.', 'real-time systems.', 'scalable backends.'];
+const texts = [
+  'Flutter & real-time mobile apps.',
+  'scalable APIs with Laravel & NestJS.',
+  'clean architecture for production.'
+];
   let textIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
