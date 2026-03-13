@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- تعيين ترميز الأحرف -->
+  <meta charset="utf-8" />
+  <!-- إعداد العرض ليتناسب مع جميع الأجهزة -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- عنوان الصفحة في شريط المتصفح -->
+  <title>Suliman | Flutter Developer</title>
+
+  <!-- ربط ملفات CSS الخاصة بتصميم الموقع -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- شريط التقدم أعلى الصفحة -->
+  <div id="progress-bar"></div>
+  <!-- رأس الموقع: يحتوي على الشعار والقائمة الرئيسية وأزرار التحكم -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <!-- شعار الموقع -->
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand__dot"></span>
+        <span>Suliman</span>
+      </a>
+
+      <!-- روابط التنقل الرئيسية -->
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#projects">Projects</a>
+        <a class="nav__link" href="#experience">Experience</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <!-- أزرار تغيير اللغة/الوضع الليلي وزر عرض الأعمال -->
+      <div class="nav__actions">
+        <!-- زر الترجمة تمت إزالته نهائياً -->
+        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">🌙</span>
+        </button>
+        <a class="btn btn--primary" href="#projects">View work</a>
+      </div>
+
+      <!-- زر القائمة الجانبية للأجهزة الصغيرة -->
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        ☰
+      </button>
+    </div>
+
+    <!-- قائمة التنقل الجانبية للجوال -->
+    <div class="mobileMenu" id="mobileMenu" hidden>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- قسم البطل (Hero): مقدمة تعريفية سريعة -->
+    <section class="hero">
+      <div class="hero__left">
+        <!-- وصف مختصر للمطور -->
+        <p class="kicker reveal">Mobile & Backend Developer</p>
+        <!-- العنوان الرئيسي مع تأثير الكتابة -->
+        <h1 class="hero__title reveal">
+          I build <span class="accent">fast</span>, <span class="accent">clean</span> apps<br />
+          with <span class="typing" id="typing-text"></span>
+        </h1>
+
+        <!-- وصف تفصيلي للمهارات والتقنيات -->
+        <p class="lead reveal">
+        <ul class="lead-list">
+          <li>Flutter State Management : GetX / Provider / Bloc </li>
+          <li>Flutter Architecture : MVVM / MVC </li>
+          <li>Real-time systems: WebSocket</li>
+          <li>Backends: Laravel / NestJS</li>
+          <li>Clean architecture, reliable UX, and production-ready delivery</li>
+        </ul>
+        </p>
+
+        <!-- أزرار دعوة لاتخاذ إجراء (مشاريع/تواصل) -->
+        <div class="hero__cta reveal">
+          <a class="btn btn--primary" href="#projects">See Projects</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
+        </div>
+
+        <!-- روابط التواصل الاجتماعي والبريد -->
+        <div class="meta reveal" id="socialLinks"></div>
+
+        <!-- إحصائيات سريعة عن الإنجازات -->
+        <div class="hero__stats reveal">
+          <div class="stat">
+            <div class="stat__num">3+</div>
+            <div class="stat__label">Production apps</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Real-time</div>
+            <div class="stat__label">Tracking & chat</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num">Clean</div>
+            <div class="stat__label">Architecture</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة جانبية تعرض المهارات والخبرات بشكل مختصر -->
+      <aside class="hero__card card reveal">
+        <div class="card__top">
+          <div class="avatar" aria-hidden="true">
+            <img id="avatarImg" alt="Suliman" style="cursor:pointer;" />
+          </div>
+          <!-- نافذة منبثقة للصورة -->
+          <div id="imgModal" class="modal" style="display:none;">
+            <div class="modal__content">
+              <span class="modal__close" id="closeModal">&times;</span>
+              <img id="modalImg" src="assets/images/personal/me.jpeg" alt="Profile Large" />
+            </div>
+          </div>
+          <!-- <div class="avatar__glow"></div> -->
+        </div>
+        <div>
+          <p class="card__title">Now shipping</p>
+          <p class="muted small">Maps • Tracking • Chatbots</p>
+        </div>
+        </div>
+
+        <!-- قائمة مختصرة بالمهارات والخدمات المقدمة -->
+        <ul class="list">
+          <li class="list__item">Flutter UI components & state management</li>
+          <li class="list__item">Maps, routes, markers, polyline rendering</li>
+          <li class="list__item">WebSocket live updates </li>
+          <li class="list__item">Backends: Laravel + NestJS for new services</li>
+        </ul>
+
+        <!-- أزرار إضافية -->
+        <div class="card__bottom">
+          <a class="btn btn--ghost btn--sm" href="#skills">Tech stack</a>
+          <a class="btn btn--primary btn--sm" href="#contact">Hire me</a>
+        </div>
+      </aside>
+
+      <!-- تأثير جمالي في الخلفية -->
+      <div class="hero__glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- قسم نبذة عني -->
+    <section id="about" class="section">
+      <div class="section__head reveal">
+        <h2>About</h2>
+        <p class="muted">A short story, focused on results.</p>
+      </div>
+
+      <!-- بطاقات توضح طريقة العمل والخدمات -->
+      <div class="aboutGrid">
+        <div class="card reveal">
+          <h3 class="h3">What I do</h3>
+          <p class="muted">
+            I build complete features end-to-end: mobile UI, API integration, data models, and real-time flows.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="h3">How I work</h3>
+          <p class="muted">
+            Organized code, reusable components, and careful state management. I prefer practical solutions and clean
+            UX.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="h3">What you get</h3>
+          <p class="muted">
+            Maintainable code, clear structure, and a product that’s easy to extend and ship.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المهارات -->
+    <section id="skills" class="section">
+      <div class="section__head reveal">
+        <h2>Skills</h2>
+        <p class="muted">A focused stack for building real products.</p>
+      </div>
+
+      <!-- بطاقات توضح المهارات التقنية في مجالات مختلفة -->
+      <div class="skillsGrid">
+        <div class="card reveal">
+          <h3 class="h3">Mobile</h3>
+          <div class="chips">
+            <span class="chip">Flutter</span><span class="chip">Dart</span> <span class="chip">Block</span> <span
+              class="chip">Provider</span> <span class="chip">GetX</span><span class="chip">MVC</span><br><span
+              class="chip">MVVM</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="h3">Backend</h3>
+          <div class="chips">
+            <span class="chip">Laravel</span><span class="chip">NestJS</span><span class="chip">REST</span><span
+              class="chip">Auth</span><span class="chip">Firebase</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="h3">Database</h3>
+          <div class="chips">
+            <span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span
+              class="chip">Firestore</span><span class="chip">MongoDB</span><span class="chip">NoSQL</span><span
+              class="chip">Local Storage</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="h3">Real-time & Maps</h3>
+          <div class="chips">
+            <span class="chip">WebSocket</span><span class="chip">Google Maps</span><span class="chip">OSM</span><span
+              class="chip">Routing</span>
+          </div>
+        </div>
+
+
+        <div class="card reveal">
+          <h3 class="h3">Tooling</h3>
+          <div class="chips">
+            <span class="chip">Git</span><span class="chip">n8n</span><span class="chip">GitHub Actions</span><span
+              class="chip">GitLab CI</span><span class="chip">CI/CD</span><span class="chip">GCP</span><span
+              class="chip">Unit Testing</span><span class="chip">Integration Testing</span><span class="chip">E2E
+              Testing</span><span class="chip">Testing</span><span class="chip">Clean Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="section">
+      <div class="section__head reveal">
+        <h2>Projects</h2>
+        <p class="muted">A few highlights. Each card animates on scroll.</p>
+      </div>
+
+      <!-- عرض المشاريع على شكل بطاقات -->
+      <div class="grid3">
+        <!-- مشروع: Yahu-ai تطبيق تاكسي للعملاء -->
+        <article class="project card reveal lift tilt">
+          <div class="project__thumb" aria-hidden="true"></div>
+          <div class="project__body">
+            <h3 class="h3">Yahu-ai</h3>
+            <p class="muted">Real-time taxi booking app for customers. Features real-time driver tracking, route
+              optimization, trip states, and interactive maps.</p>
+            <div class="chips chips--tight">
+              <span class="chip">Flutter</span><span class="chip">GetX</span><span class="chip">MVC</span><span
+                class="chip">WebSocket</span><span class="chip">Firebase</span><span class="chip">Maps</span><span
+                class="chip">GPS</span>
+            </div>
+            <div class="row">
+              <a class="btn btn--primary btn--sm" href="projects/taxi-app.html">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- مشروع: Yahu Driver تطبيق تاكسي للسائقين -->
+        <article class="project card reveal lift tilt">
+          <div class="project__thumb" aria-hidden="true"></div>
+          <div class="project__body">
+            <h3 class="h3">Yahu Driver</h3>
+            <p class="muted">Driver companion app for taxi coordination. Features GPS tracking, earnings dashboard,
+              real-time notifications, and navigation.</p>
+            <div class="chips chips--tight">
+              <span class="chip">Flutter</span><span class="chip">GetX</span><span class="chip">MVC</span><span
+                class="chip">WebSocket</span><span class="chip">Firebase</span><span class="chip">Maps</span><span
+                class="chip">GPS</span>
+            </div>
+            <div class="row">
+              <a class="btn btn--primary btn--sm" href="projects/driver-app.html">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- مشروع: Car For You (CFY) -->
+        <article class="project card reveal lift tilt">
+          <div class="project__thumb" aria-hidden="true"></div>
+          <div class="project__body">
+            <h3 class="h3">Car For You (CFY)</h3>
+            <p class="muted">Car marketplace for buying/selling. Integrated chat, AI n8n chatbot, simple recommendation
+              system, and secure transactions.</p>
+            <div class="chips chips--tight">
+              <span class="chip">Flutter</span><span class="chip">Laravel</span><span class="chip">Chat</span><span
+                class="chip">n8n</span><span class="chip">Firebase</span><span class="chip">Recommendations</span>
+            </div>
+            <div class="row">
+              <a class="btn btn--primary btn--sm" href="projects/marketplace.html">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- مشروع: Trade Nova -->
+        <article class="project card reveal lift tilt">
+          <div class="project__thumb" aria-hidden="true"></div>
+          <div class="project__body">
+            <h3 class="h3">Trade Nova</h3>
+            <p class="muted">Lightweight mobile accounting & POS for small stores. Store & inventory management with
+              full offline support and cloud sync.</p>
+            <div class="chips chips--tight">
+              <span class="chip">Flutter</span><span class="chip">SQLite</span><span
+                class="chip">Offline-first</span><span class="chip">Firebase</span><span class="chip">Sync</span>
+            </div>
+            <div class="row">
+              <a class="btn btn--primary btn--sm" href="projects/trade-nova.html">View Details</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- قسم الخبرة العملية -->
+    <section id="experience" class="section">
+      <div class="section__head reveal">
+        <h2>Experience</h2>
+        <p class="muted">What I've been building recently.</p>
+      </div>
+
+      <!-- خط زمني يعرض الخبرات السابقة -->
+      <div class="timeline">
+        <div class="timeline__item card reveal">
+          <div class="timeline__row">
+            <div>
+              <h3 class="h3">Flutter Developer</h3>
+              <p class="muted small">Maps • Real-time • APIs</p>
+            </div>
+            <p class="muted small">2024 — Present</p>
+          </div>
+          <ul class="list">
+            <li class="list__item">Building and maintaining mobile apps at EBTECH.</li>
+            <li class="list__item">Built reusable widgets and structured state management.</li>
+            <li class="list__item">Integrated maps, routing, markers, and live updates.</li>
+            <li class="list__item">Designed clean data models and API contracts.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section id="contact" class="section">
+      <div class="section__head reveal">
+        <h2>Contact</h2>
+        <p class="muted">Let's build something solid.</p>
+      </div>
+
+
+      <div class="card reveal">
+        <div class="contactRow">
+
+          <div class="emailBox">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:suliman1omira@gmail.com">suliman1omira@gmail.com</a>
+          </div>
+
+          <div class="contact-icons">
+            <a class="contactIcon whatsapp" href="https://wa.me/963985143050" target="_blank" rel="noreferrer"
+              title="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a class="contactIcon github" href="https://github.com/SulimanOmaira/" target="_blank" rel="noreferrer"
+              title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a class="contactIcon gitlab" href="https://gitlab.com/SulimanOmaira/" target="_blank" rel="noreferrer"
+              title="GitLab">
+              <i class="fa-brands fa-gitlab"></i>
+            </a>
+
+            <a class="contactIcon linkedin" href="https://linkedin.com/in/suliman-omaira-6196aa273/" target="_blank"
+              rel="noreferrer" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+
+          <a class="btn btn--primary backTop" href="#top">Back to top</a>
+
+        </div>
+      </div>
+
+
+
+      <!-- تذييل الصفحة -->
+      <footer class="footer muted small">
+        © <span id="year"></span> Suliman
+      </footer>
+    </section>
+  </main>
+
+  <!-- ربط ملف جافاسكريبت الرئيسي للموقع -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { siteData } from './js/data.js';
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const social = siteData.social;
+      const socialLinks = document.getElementById('socialLinks');
+
+      if (socialLinks && social) {
+        const links = [
+          { href: social.github, label: 'GitHub' },
+          { href: social.gitlab, label: 'GitLab' },
+          { href: social.linkedin, label: 'LinkedIn' },
+          { href: social.whatsapp, label: 'WhatsApp' },
+          { href: social.email, label: 'suliman1omira@gmail.com' }
+        ];
+
+        socialLinks.innerHTML = links.map((l, i) =>
+          `<a class="meta__link" href="${l.href}" target="_blank" rel="noreferrer">${l.label}</a>${i < links.length - 1 ? '<span class="meta__sep">·</span>' : ''}`
+        ).join('');
+      }
+    });
+  </script>
+  <script>
+    // فتح الصورة في كارد منبثق
+    document.addEventListener('DOMContentLoaded', function () {
+      var avatarImg = document.getElementById('avatarImg');
+      var modal = document.getElementById('imgModal');
+      var modalImg = document.getElementById('modalImg');
+      var closeModal = document.getElementById('closeModal');
+      if (avatarImg && modal && modalImg && closeModal) {
+        avatarImg.style.cursor = 'pointer';
+        avatarImg.addEventListener('click', function () {
+          modal.style.display = 'flex';
+          modalImg.src = avatarImg.src;
+        });
+        closeModal.onclick = function () {
+          modal.style.display = 'none';
+        };
+        modal.onclick = function (e) {
+          if (e.target === modal) modal.style.display = 'none';
+        };
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

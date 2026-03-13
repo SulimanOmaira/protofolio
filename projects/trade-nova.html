@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Trade Nova &mdash; Suliman's Portfolio</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/sections.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav__inner container">
+            <a class="brand" href="../index.html" aria-label="Home">
+                <span class="brand__dot"></span><span>Suliman</span>
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a class="nav__link" href="../index.html#about">About</a>
+                <a class="nav__link" href="../index.html#skills">Skills</a>
+                <a class="nav__link" href="../index.html#projects">Projects</a>
+                <a class="nav__link" href="../index.html#experience">Experience</a>
+                <a class="nav__link" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="section">
+            <h1>Trade Nova</h1>
+            <p class="muted">Lightweight mobile accounting & POS for small stores with store & inventory management.</p>
+
+            <!-- full project image -->
+            <img src="../assets/images/trade_nova/logo_trade_nova.png" alt="Full screenshot of Trade Nova"
+                class="project-detail-img" />
+
+            <h2>About the Project</h2>
+            <p>
+                Trade Nova is an offline‑first point-of-sale and inventory management
+                app tailored for small retail shops. Written in Flutter, it stores data
+                locally using SQLite and syncs with a Laravel backend when Internet is available.
+                The design focuses on speed and usability in low‑connectivity environments,
+                providing barcode scanning, customer tracking, and simple financial reports.
+            </p>
+
+            <h2>Tools &amp; Technologies</h2>
+            <ul class="chips chips--tight">
+                <li class="chip">Flutter</li>
+                <li class="chip">SQLite</li>
+                <li class="chip">Firebase</li>
+                <li class="chip">Laravel Backend</li>
+                <li class="chip">Git</li>
+            </ul>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Store and inventory management with categories</li>
+                <li>Full offline‑first operation with local database</li>
+                <li>Cloud sync when connection is available</li>
+                <li>Sales reports and analytics dashboard</li>
+                <li>Barcode scanning for quick checkout</li>
+                <li>Customer profiles and history tracking</li>
+            </ul>
+
+            <h2>Screenshots</h2>
+            <div class="screenshot-gallery">
+                <img src="../assets/images/trade_nova/splash.png" alt="Inventory list">
+                <img src="../assets/images/trade_nova/home_page.png" alt="Sales report">
+                <img src="../assets/images/trade_nova/cash_box.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/stock_in.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/stock_out.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/quick_sale.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/product.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/app_locked.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/settings.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/complanits.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/invoice.png" alt="Checkout screen">
+                <img src="../assets/images/trade_nova/returns.png" alt="Checkout screen">
+            </div>
+
+            <div class="project-nav">
+
+                <button class="nav-btn back-btn" onclick="this.disabled=true; history.back();">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to projects
+                </button>
+
+                <a class="nav-btn home-btn" href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+            </div>
+        </section>
+    </main>
+    <footer class="container">
+        <p>&copy; <span id="year"></span> Suliman</p>
+    </footer>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>

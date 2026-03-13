@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Yahu-ai &mdash; Suliman's Portfolio</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/sections.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav__inner container">
+            <a class="brand" href="../index.html" aria-label="Home">
+                <span class="brand__dot"></span><span>Suliman</span>
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a class="nav__link" href="../index.html#about">About</a>
+                <a class="nav__link" href="../index.html#skills">Skills</a>
+                <a class="nav__link" href="../index.html#projects">Projects</a>
+                <a class="nav__link" href="../index.html#experience">Experience</a>
+                <a class="nav__link" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="section">
+            <h1>Yahu-ai</h1>
+            <p class="muted">Real-time taxi booking app for customers with driver tracking, route optimization, and
+                seamless user experience.</p>
+
+            <!-- full project hero image -->
+            <img src="../assets/images/yahu_ai/logocar.png" alt="Full screenshot of Yahu-ai"
+                class="project-detail-img" />
+
+            <h2>About the Project</h2>
+            <p>
+                Yahu-ai is a consumer-facing mobile application designed to provide a smooth
+                and reliable taxi booking experience in real time. Built with Flutter for
+                both Android and iOS, the app communicates with a Laravel backend using
+                WebSockets to stream live driver locations and trip updates. Users can
+                request a ride, track the driver's approach, and review past trips.
+                The interface emphasizes simplicity, speed, and clear feedback.
+            </p>
+
+            <h2>Tools &amp; Technologies</h2>
+            <ul class="chips chips--tight">
+                <li class="chip">Flutter</li>
+                <li class="chip">GetX</li>
+                <li class="chip">Google Maps API</li>
+                <li class="chip">WebSocket</li>
+                <li class="chip">Laravel (PHP)</li>
+                <li class="chip">MySQL</li>
+                <li class="chip">Git</li>
+            </ul>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Real‑time GPS tracking for drivers and passengers</li>
+                <li>Interactive map with route visualization</li>
+                <li>WebSocket integration for live updates</li>
+                <li>Trip state management and history</li>
+                <li>Customer ratings and feedback</li>
+                <li>Location‑based notifications</li>
+            </ul>
+
+            <h2>Screenshots</h2>
+            <div class="screenshot-gallery">
+                <img src="../assets/images/yahu_ai/Drawer.png" alt="Booking screen">
+                <img src="../assets/images/yahu_ai/trip.png" alt="Booking screen">
+                <img src="../assets/images/yahu_ai/trip_progress.png" alt="Booking screen">
+                <img src="../assets/images/yahu_ai/booking.png" alt="Booking screen">
+                <img src="../assets/images/yahu_ai/booking_details.png" alt="Booking screen">
+            </div>
+
+            <h2>Download</h2>
+
+            <div class="download-buttons">
+
+                <a class="store-btn google"
+                    href="https://play.google.com/store/apps/details?id=com.syrianova.yahuCustomer" target="_blank"
+                    rel="noreferrer">
+
+                    <i class="fa-brands fa-google-play"></i>
+
+                    <div class="store-text">
+                        <span>Get it on</span>
+                        <strong>Google Play</strong>
+                    </div>
+
+                </a>
+
+
+                <a class="store-btn apple" href="https://apps.apple.com/ae/app/yahu-ai/id6753225207" target="_blank"
+                    rel="noreferrer">
+
+                    <i class="fa-brands fa-apple"></i>
+
+                    <div class="store-text">
+                        <span>Download on the</span>
+                        <strong>App Store</strong>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- <p>
+                <button class="btn btn--ghost btn--sm" onclick="this.disabled=true; history.back();">← Back to
+                    projects</button>
+                <a class="btn btn--ghost btn--sm" href="../index.html">Home</a>
+            </p> -->
+
+
+            <div class="project-nav">
+
+                <button class="nav-btn back-btn" onclick="this.disabled=true; history.back();">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to projects
+                </button>
+
+                <a class="nav-btn home-btn" href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+            </div>
+
+
+        </section>
+    </main>
+    <footer class="container">
+        <p>&copy; <span id="year"></span> Suliman</p>
+    </footer>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>

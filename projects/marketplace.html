@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Car For You (CFY) &mdash; Suliman's Portfolio</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/sections.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav__inner container">
+            <a class="brand" href="../index.html" aria-label="Home">
+                <span class="brand__dot"></span><span>Suliman</span>
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a class="nav__link" href="../index.html#about">About</a>
+                <a class="nav__link" href="../index.html#skills">Skills</a>
+                <a class="nav__link" href="../index.html#projects">Projects</a>
+                <a class="nav__link" href="../index.html#experience">Experience</a>
+                <a class="nav__link" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="section">
+            <h1>Car For You (CFY)</h1>
+            <p class="muted">Car marketplace for buying/selling with integrated chat, AI n8n chatbot, and recommendation
+                system.</p>
+
+            <!-- full project image -->
+            <img src="../assets/images/cfy/logo.png" alt="Full screenshot of CFY" class="project-detail-img" />
+
+            <h2>About the Project</h2>
+            <p>
+                CFY (Car For You) is a lightweight marketplace application designed to
+                connect buyers and sellers of vehicles across the region. The mobile
+                front-end is built with Flutter, while the backend uses Laravel and
+                MySQL. A custom recommendation system offers users tailored suggestions
+                based on browsing history. Core functionality includes real‑time chat
+                (WebSocket) and an AI‑driven chatbot implemented with n8n to assist with
+                queries and onboarding.
+            </p>
+
+            <h2>Tools &amp; Technologies</h2>
+            <ul class="chips chips--tight">
+                <li class="chip">Flutter</li>
+                <li class="chip">Laravel</li>
+                <li class="chip">MySQL</li>
+                <li class="chip">WebSocket</li>
+                <li class="chip">Firebase</li>
+                <li class="chip">n8n (AI chatbot)</li>
+                <li class="chip">Git</li>
+            </ul>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Advanced search and filtering for listings</li>
+                <li>Real-time chat between buyers and sellers</li>
+                <li>Integrated AI chatbot powered by n8n</li>
+                <li>Simple recommendation engine based on preferences</li>
+                <li>Image gallery with pinch‑to‑zoom</li>
+                <li>Secure in‑app transaction flow</li>
+            </ul>
+
+            <h2>Screenshots</h2>
+            <div class="screenshot-gallery">
+                <img src="../assets/images/cfy/HomePage.png" alt="Home page">
+                <img src="../assets/images/cfy/Profile.png" alt="profile page">
+                <img src="../assets/images/cfy/Filter.jpg" alt="Filter options">
+                <img src="../assets/images/cfy/Details.png" alt="Details">
+                <img src="../assets/images/cfy/vip.png" alt="VIP interface">
+                <img src="../assets/images/cfy/payment.png" alt="Payment interface">
+                <img src="../assets/images/cfy/Chat.png" alt="Chat interface">
+                <img src="../assets/images/cfy/chat_bot.png" alt="Chatbot interface">
+            </div>
+
+            <!-- <p>
+        <button class="btn btn--ghost btn--sm" onclick="this.disabled=true; history.back();">← Back to projects</button>
+        <a class="btn btn--ghost btn--sm" href="../index.html">Home</a>
+      </p> -->
+
+            <div class="project-nav">
+
+                <button class="nav-btn back-btn" onclick="this.disabled=true; history.back();">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to projects
+                </button>
+
+                <a class="nav-btn home-btn" href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+            </div>
+        </section>
+    </main>
+    <footer class="container">
+        <p>&copy; <span id="year"></span> Suliman</p>
+    </footer>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
