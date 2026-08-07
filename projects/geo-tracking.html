@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Geo Tracking &mdash; Suliman's Portfolio</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/sections.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="nav">
+        <div class="nav__inner container">
+            <a class="brand" href="../index.html" aria-label="Home">
+                <span class="brand__dot"></span><span>Suliman</span>
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a class="nav__link" href="../index.html#about">About</a>
+                <a class="nav__link" href="../index.html#skills">Skills</a>
+                <a class="nav__link" href="../index.html#projects">Projects</a>
+                <a class="nav__link" href="../index.html#experience">Experience</a>
+                <a class="nav__link" href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h1>Geo Tracking</h1>
+            <p class="muted">Production Flutter app for field sales teams with offline workflows, GPS validation, and ERP synchronization.</p>
+
+            <img src="../assets/images/geo_tracking/geo_tracking_placeholder.svg" alt="Geo Tracking app preview"
+                class="project-detail-img" />
+
+            <h2>About the Project</h2>
+            <p>
+                Built a production Flutter application for sales representatives and distribution teams,
+                enabling them to manage daily routes, customer visits, POS orders, payments, returns,
+                stock, invoices, and reports even with unstable internet connectivity.
+            </p>
+
+            <h2>Tools &amp; Technologies</h2>
+            <ul class="chips chips--tight">
+                <li class="chip">Flutter</li>
+                <li class="chip">Dart</li>
+                <li class="chip">Offline-first</li>
+                <li class="chip">GPS / Maps</li>
+                <li class="chip">Odoo ERP</li>
+                <li class="chip">SQLite</li>
+                <li class="chip">Bluetooth Printing</li>
+                <li class="chip">Arabic / English UI</li>
+            </ul>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li>Offline order, payment, and visit creation with automatic sync</li>
+                <li>GPS check-in/out with distance validation and anti-mock-location checks</li>
+                <li>Odoo ERP integration for products, customers, stock, payments, loyalty, and reports</li>
+                <li>Offline request dashboard for pending, failed, and archived sync operations</li>
+                <li>Route visualization with maps, customer pins, and live location updates</li>
+                <li>Sales analytics, top products, sales vs returns, and visit-status dashboards</li>
+                <li>Barcode scanning, receipt/signature handling, and Bluetooth thermal printing</li>
+                <li>Arabic/English localized experience</li>
+            </ul>
+
+            <h2>Screenshots</h2>
+            <div class="screenshot-gallery">
+                <img src="../assets/images/geo_tracking/geo_tracking_placeholder.svg" alt="Geo tracking dashboard preview">
+                <img src="../assets/images/geo_tracking/geo_tracking_placeholder.svg" alt="Route and map view preview">
+                <img src="../assets/images/geo_tracking/geo_tracking_placeholder.svg" alt="Offline sync panel preview">
+            </div>
+
+            <div class="project-nav">
+                <button class="nav-btn back-btn" onclick="this.disabled=true; history.back();">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to projects
+                </button>
+
+                <a class="nav-btn home-btn" href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; <span id="year"></span> Suliman</p>
+    </footer>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
