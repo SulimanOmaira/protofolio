@@ -12,6 +12,21 @@ export const siteData = {
     linkedin: "https://linkedin.com/in/suliman-omaira-6196aa273/"
   },
   projects: {
+    geoTracking: {
+      title: 'Geo Tracking',
+      description: 'Production Flutter app for field sales teams with offline workflows, GPS validation, ERP sync, and analytics dashboards.',
+      image: "assets/images/geo_tracking/logo_geo_tracking1.png",
+      features: [
+        'Offline order, payment, and visit creation',
+        'GPS check-in/out with validation',
+        'Odoo ERP integration',
+        'Offline sync dashboard',
+        'Maps and live location updates',
+        'Sales analytics and reports'
+      ],
+      tech: ['Flutter', 'Dart', 'Offline-first', 'GPS', 'Odoo ERP', 'SQLite'],
+      demo: 'https://demo-link.com'
+    },
     yahuAi: {
       title: 'Yahu-ai',
       description: 'Real-time taxi booking app for customers with driver tracking, route optimization, and seamless user experience.',
@@ -70,21 +85,6 @@ export const siteData = {
         'Customer management'
       ],
       tech: ['Flutter', 'SQLite', 'Firebase', 'Local Storage', 'Laravel Backend'],
-      demo: 'https://demo-link.com'
-    },
-    geoTracking: {
-      title: 'Geo Tracking',
-      description: 'Production Flutter app for field sales teams with offline workflows, GPS validation, ERP sync, and analytics dashboards.',
-      image: "assets/images/geo_tracking/geo_tracking_placeholder.svg",
-      features: [
-        'Offline order, payment, and visit creation',
-        'GPS check-in/out with validation',
-        'Odoo ERP integration',
-        'Offline sync dashboard',
-        'Maps and live location updates',
-        'Sales analytics and reports'
-      ],
-      tech: ['Flutter', 'Dart', 'Offline-first', 'GPS', 'Odoo ERP', 'SQLite'],
       demo: 'https://demo-link.com'
     }
   },
